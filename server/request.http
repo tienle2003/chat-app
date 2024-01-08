@@ -1,0 +1,16 @@
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+# {
+#     "userName" : "congacon",
+#     "password": "chatapp123",
+# }
+
+{
+    "userName" : "congacon",
+    "password": "chatapp123",
+    "gender": true,
+    "age":20,
+    "likeNumber": 100,
+    "avatarImage": ""
+}
