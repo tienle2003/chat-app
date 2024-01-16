@@ -1,9 +1,10 @@
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config();
-const mongoose = require("mongoose");
+import express from "express";
+import cors from "cors";
+import "dotenv/config";
+import mongoose from "mongoose";
+const port = process.env.PORT || 3000;
 
-const authRouter = require("./routes/auth");
+import initRoutes from "./routes/index.js";
 
 const app = express();
 app.use(express.json());
@@ -19,12 +20,8 @@ mongoose
     process.exit(1);
   });
 
-app.listen(process.env.PORT, () => {
-  console.log(`server is running on ${process.env.PORT}`);
+app.listen(port, () => {
+  console.log(`server is running on ${port}`);
 });
 
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
-
-app.use("/auth/", authRouter);
+initRoutes(app);

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -30,9 +30,10 @@ const UserSchema = new Schema({
     default: 100,
   },
   avatarImage: {
-    type: String,
+    type: Object,
     default: "default.jpg",
   },
 });
 
-module.exports = mongoose.model("Users", UserSchema);
+export default mongoose.model("Users", UserSchema);
+
