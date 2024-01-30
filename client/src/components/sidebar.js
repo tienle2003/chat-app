@@ -3,7 +3,6 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 import {
   ArrowLeftCircle,
-  BrightnessAltHigh,
   BrightnessHigh,
   CardHeading,
   Chat,
@@ -14,6 +13,8 @@ import {
   Person,
   Robot,
 } from "react-bootstrap-icons";
+import 'bootstrap/dist/css/bootstrap.css';
+
 import "./sidebar.css";
 import { NavLink } from "react-router-dom";
 
@@ -89,13 +90,13 @@ function Sidebar() {
                 </a>
               </Tippy>
             </li>
-            <li className="nav-item" onClick={handleToggleMenu}>
-              <a className="nav-link">
+            <li className="nav-item" onClick={handleToggleMenu} onBlur={handleToggleMenu}>
+              <NavLink className="nav-link">
                 <img
                   className="profile-user rounded-circle"
                   src="https://ss-images.saostar.vn/wp700/2019/08/11/5823290/0.jpg"
                 ></img>
-              </a>
+              </NavLink>
             </li>
             <ul
               className={`dropdown-menu dropdown-position ${
@@ -103,25 +104,25 @@ function Sidebar() {
               }`}
             >
               <li>
-                <a className="dropdown-item" href="/profile">
+                <NavLink className="dropdown-item" to="/profile">
                   Profile
                   <CardHeading />
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a className="dropdown-item" href="/setting">
+                <NavLink className="dropdown-item" to="/setting">
                   Settings
                   <Gear />
-                </a>
+                </NavLink>
               </li>
               <li>
                 <hr className="dropdown-divider" />
               </li>
               <li>
-                <a className="dropdown-item" href="/login">
+                <NavLink className="dropdown-item" to="/login">
                   Sign out
                   <ArrowLeftCircle />
-                </a>
+                </NavLink>
               </li>
             </ul>
           </ul>
