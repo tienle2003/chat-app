@@ -5,7 +5,6 @@ const Chat = () => {
   return (
     <div className="d-flex">
       <Sidebar />
-      chat
     </div>
   );
 };
