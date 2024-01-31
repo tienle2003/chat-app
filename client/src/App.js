@@ -16,8 +16,8 @@ function App() {
           <Route path="/chats" element={<Chat />}></Route>
           <Route path="/group" element={<Chat />}></Route>
           <Route path="/chat-gpt" element={<Chat />}></Route>
-          <Route path="/setting" element={<Chat />}></Route>
           <Route path="/profile" element={<Chat />}></Route>
+          <Route path="/setting" element={<Chat />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="*" element={<Navigate to="/" />}>
