@@ -30,20 +30,20 @@ function Sidebar() {
   const menuItems = [
     { content: "Profile", icon: <Person />, href: "/profile" },
     { content: "Chats", icon: <Chat />, href: "/chats" },
-    { content: "Group", icon: <People />, href: "/group" },
+    { content: "Groups", icon: <People />, href: "/group" },
     { content: "Settings", icon: <Gear />, href: "/setting" },
     { content: "Chat GPT", icon: <Robot />, href: "/chat-gpt", offset: [0, 0] },
   ];
 
   return (
     <>
-      <div className="side_menu d-flex flex-column mg-lg-1 text-center">
+      <div className="side_menu d-flex flex-column mg-lg-1 text-center ">
         <a className="logo" href="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            width="30"
-            height="30"
+            width="35"
+            height="35"
           >
             <path fill="none" d="M0 0h24v24H0z" />
             <path
@@ -83,7 +83,7 @@ function Sidebar() {
               </a>
             </li>
             <li className="nav-item" onClick={handleToggleMode}>
-              <Tippy content="Dark/Light mode" placement="right">
+              <Tippy content="Dark/Light Mode" placement="right">
                 <a className="mb-2 nav-link">
                   {mode ? <BrightnessHigh /> : <Moon />}
                 </a>
@@ -96,33 +96,33 @@ function Sidebar() {
                   src="https://ss-images.saostar.vn/wp700/2019/08/11/5823290/0.jpg"
                 ></img>
               </a>
+              <ul
+                className={`dropdown-menu dropdown-position ${isMenuVisible ? "show" : ""
+                  }`}
+              >
+                <li>
+                  <a className="dropdown-item" href="/profile">
+                    Profile
+                    <CardHeading />
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/setting">
+                    Settings
+                    <Gear />
+                  </a>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/login">
+                    Sign out
+                    <ArrowLeftCircle />
+                  </a>
+                </li>
+              </ul>
             </li>
-            <ul
-              className={`dropdown-menu dropdown-position ${isMenuVisible ? "show" : ""
-                }`}
-            >
-              <li>
-                <a className="dropdown-item" href="/profile">
-                  Profile
-                  <CardHeading />
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="/setting">
-                  Settings
-                  <Gear />
-                </a>
-              </li>
-              <li>
-                <hr className="dropdown-divider" />
-              </li>
-              <li>
-                <a className="dropdown-item" href="/login">
-                  Sign out
-                  <ArrowLeftCircle />
-                </a>
-              </li>
-            </ul>
           </ul>
         </div>
       </div>
