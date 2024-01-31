@@ -28,11 +28,11 @@ function Sidebar() {
   };
 
   const menuItems = [
-    { content: "profile", icon: <Person />, href: "/profile" },
-    { content: "chats", icon: <Chat />, href: "/chats" },
-    { content: "group", icon: <People />, href: "/group" },
-    { content: "settings", icon: <Gear />, href: "/setting" },
-    { content: "chat GPT", icon: <Robot />, href: "/chat-gpt", offset: [0, 0] },
+    { content: "Profile", icon: <Person />, href: "/profile" },
+    { content: "Chats", icon: <Chat />, href: "/chats" },
+    { content: "Group", icon: <People />, href: "/group" },
+    { content: "Settings", icon: <Gear />, href: "/setting" },
+    { content: "Chat GPT", icon: <Robot />, href: "/chat-gpt", offset: [0, 0] },
   ];
 
   return (
@@ -98,9 +98,8 @@ function Sidebar() {
               </a>
             </li>
             <ul
-              className={`dropdown-menu dropdown-position ${
-                isMenuVisible ? "show" : ""
-              }`}
+              className={`dropdown-menu dropdown-position ${isMenuVisible ? "show" : ""
+                }`}
             >
               <li>
                 <a className="dropdown-item" href="/profile">
