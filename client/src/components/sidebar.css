@@ -11,8 +11,8 @@
   top: 0;
   bottom: 0;
   left: 0;
-  max-width: 75px;
-  min-width: 75px;
+  max-width: var(--default-size);
+  min-width: var(--default-size);
   z-index: 9;
 }
 
