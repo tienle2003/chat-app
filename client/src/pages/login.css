@@ -86,6 +86,11 @@
     border: 1px solid #ccc;
 }
 
+.for-username::placeholder,
+.for-password::placeholder {
+    color: #b2b2b2;
+}
+
 .detail-instruction {
     min-width: var(--nearest-min-width-form);
     padding: 0 6px;
@@ -110,7 +115,7 @@
     min-width: var(--nearest-min-width-form);
 }
 
-button {
+.btn-groups button {
     border: none;
     padding: 10px 20px;
     background: var(--purple-weight-light);
@@ -120,6 +125,7 @@ button {
     border-radius: 40px;
     cursor: pointer;
     font-weight: 700;
+    outline: none;
 }
 
 button:nth-child(1) {
@@ -134,11 +140,23 @@ button:nth-child(1) {
     justify-content: space-around;
 }
 
+.other-login span {
+    color: #a7a7a7;
+}
+
 hr {
-    width: 170px;
+    width: 120px;
 }
 
 .social-login {
     margin: 10px 0;
     margin-bottom: 50px;
+}
+
+.social-login svg {
+    cursor: pointer;
+}
+
+.social-login svg:nth-child(1) {
+    color: blue;
 }
