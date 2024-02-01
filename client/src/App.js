@@ -6,6 +6,7 @@ import Chat from "./pages/chat";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Sidebar from "./components/sidebar";
+import Content from "./components/content";
 
 function App() {
   return (
