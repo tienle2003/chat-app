@@ -7,6 +7,7 @@
   --purple-weight-light: rgba(114, 105, 239, 1);
   --nearest-min-width-form: 400px;
   --min-width-form: 450px;
+  --default-size: 78px;
 }
 
 body {
