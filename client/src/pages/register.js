@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./css/common.css";
-import "./css/register.css";
 
 const Register = () => {
   const registerLogoStyle = {
