@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
+import { NavLink } from "react-router-dom";
+import "./sidebar.css";
 import {
   ArrowLeftCircle,
   BrightnessAltHigh,
@@ -14,8 +16,6 @@ import {
   Person,
   Robot,
 } from "react-bootstrap-icons";
-import "./sidebar.css";
-import { NavLink } from "react-router-dom";
 
 function Sidebar() {
   const [isMenuVisible, setMenuVisible] = useState(false);
@@ -66,7 +66,8 @@ function Sidebar() {
                     className={(nav) =>
                       `mb-2 nav-link ${nav.isActive ? "is-active" : ""}`
                     }
-                    to={item.href}
+                    to={item.href} key={index}
+                    
                   >
                     {item.icon}
                   </NavLink>
