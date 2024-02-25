@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./content.css";
 
-function Content() {
-    return(
+const Content = ({ children }) => {
+    return (
         <>
             <div className="content">
-                This is the content
+                {children}
             </div>
         </>
     );
-}
+};
 
 export default Content;
