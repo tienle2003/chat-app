@@ -2,11 +2,14 @@ import React from "react";
 import Sidebar from "../components/sidebar";
 import Content from "../components/content";
 
-const Chat = () => {
+
+const Chat = ({ children }) => {
   return (
     <div className="chat-container">
       <Sidebar />
-      <Content />
+      <Content>
+        {children}
+      </Content>
     </div>
   );
 };
