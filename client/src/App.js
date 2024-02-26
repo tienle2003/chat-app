@@ -5,6 +5,7 @@ import "./App.css";
 import Chat from "./pages/chat";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import ResetPassword from "./pages/forget-password";
 import Sidebar from "./components/sidebar";
 import Content from "./components/content";
 import Chats from "./pages/components/chats";
@@ -27,6 +28,7 @@ function App() {
           <Route path="/setting" element={<Settings />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
+          <Route path="/forget-password" element={<ResetPassword />}></Route>
           <Route path="*" element={<Navigate to="/" />}>
             {" "}
           </Route>
