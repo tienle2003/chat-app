@@ -21,11 +21,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Chat />}></Route>
-          <Route path="/chats" element={<Chats />}></Route>
-          <Route path="/group" element={<Groups />}></Route>
-          <Route path="/chat-gpt" element={<ChatGPT />}></Route>
-          <Route path="/profile" element={<Profile />}></Route>
-          <Route path="/setting" element={<Settings />}></Route>
+          <Route path="/chats" element={<Chat />}></Route>
+          <Route path="/group" element={<Chat />}></Route>
+          <Route path="/chat-gpt" element={<Chat />}></Route>
+          <Route path="/profile" element={<Chat />}></Route>
+          <Route path="/setting" element={<Chat />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/forget-password" element={<ResetPassword />}></Route>
