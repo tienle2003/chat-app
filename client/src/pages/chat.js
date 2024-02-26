@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../components/sidebar";
 import Content from "../components/content";
+import UserChats from "../components/user-chat";
 
 
-const Chat = ({ children }) => {
+const Chat = () => {
+  const containerFlex = {
+    display: "flex"
+  };
+
   return (
-    <div className="chat-container">
-      <Sidebar />
-      <Content>
-        {children}
-      </Content>
+    <div className="chat-container" style={containerFlex}>
+      <Sidebar  />
+      <Content  />
+      <UserChats />
     </div>
   );
 };
