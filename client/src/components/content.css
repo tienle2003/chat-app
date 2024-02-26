@@ -1,3 +1,16 @@
-.content {
-    margin-left: var(--default-size);
+@media (min-width: 992px) {
+    .me-lg-1 {
+        margin-right: 0.25rem !important;
+    }
+
+    .chat-leftsidebar {
+        --bs-left-sidebar-width: 380px;
+        max-width: var(--bs-left-sidebar-width);
+        min-width: var(--bs-left-sidebar-width);
+    }
+}
+
+.chat-leftsidebar {
+    background-color: #f5f7fb;
+    height: 100vh;
 }
