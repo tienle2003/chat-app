@@ -28,11 +28,11 @@ function Sidebar() {
   };
 
   const menuItems = [
-    { content: "Profile", icon: <Person />, href: "/profile" },
-    { content: "Chats", icon: <Chat />, href: "/chats" },
-    { content: "Groups", icon: <People />, href: "/group" },
-    { content: "Settings", icon: <Gear />, href: "/setting" },
-    { content: "Chat GPT", icon: <Robot />, href: "/chat-gpt", offset: [0, 0] },
+    { content: "Profile", subcontent: "user", icon: <Person />, href: "/profile" },
+    { content: "Chats", subcontent: "chat", icon: <Chat />, href: "/chats" },
+    { content: "Groups", subcontent: "group", icon: <People />, href: "/group" },
+    { content: "Settings", subcontent: "setting", icon: <Gear />, href: "/setting" },
+    { content: "Chat GPT", subcontent: "chatgpt", icon: <Robot />, href: "/chat-gpt", offset: [0, 0] },
   ];
 
   return (
@@ -54,26 +54,26 @@ function Sidebar() {
         </a>
         <div className="flex-column mt-auto mb-auto">
           <ul className="d-flex flex-wrap justify-content-center nav-list">
-            <li className="nav-item">
-              {menuItems.map((item, index) => (
+            {menuItems.map((item, index) => (
+              <li className="nav-item" id={item.content}>
                 <Tippy
                   key={index}
                   offset={[0, -4]}
                   delay={[300, 0]}
                   content={item.content}
                 >
-                  <NavLink
+                  <NavLink id={`pills-${item.subcontent}-tab`}
                     className={(nav) =>
                       `mb-2 nav-link ${nav.isActive ? "is-active" : ""}`
                     }
                     to={item.href} key={index}
-                    
+
                   >
                     {item.icon}
                   </NavLink>
                 </Tippy>
-              ))}
-            </li>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="flex-lg-column d-block">
