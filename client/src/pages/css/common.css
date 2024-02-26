@@ -86,8 +86,9 @@ label {
 }
 
 .mt-4 .mb-0,
-.text-muted.mb-4 {
-    background-color: #fff !important;
+.text-muted.mb-4,
+.float-end .font-size-13 {
+    background-color: transparent !important;
 }
 
 .mb-0 .text-primary {
@@ -98,10 +99,6 @@ label {
 
 .mb-0 .text-primary:hover {
     color: rgb(97, 89, 203) !important;
-}
-
-.float-end .font-size-13 {
-    background-color: #fff !important;
 }
 
 .font-weight-medium {
@@ -132,4 +129,16 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
     accent-color: #7269ef;
     outline: 2px solid rgba(108, 44, 248, .22) !important;
+}
+
+.card {
+    border: none;
+}
+
+.float-end {
+    float: right;
+}
+
+.float-end a {
+    text-decoration: none;
 }
