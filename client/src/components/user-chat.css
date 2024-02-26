@@ -1,0 +1,20 @@
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
+.user-chat {
+    --bs-white: #fff;
+    background-color: var(--bs-white);
+    box-shadow: 0 2px 4px rgba(15, 34, 58, .12);
+    transition: all .4s;
+}
+
+
+
+
+
+
+
+.user-profile-sidebar {
+    display: none;
+}
