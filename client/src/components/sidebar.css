@@ -7,11 +7,10 @@
 .side_menu {
   background-color: var(--secondary-color-light);
   box-shadow: 0 2px 7px var(--purple-light);
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  display: flex;
+  height: 100vh;
   max-width: var(--default-size);
+  min-height: 570px;
   min-width: var(--default-size);
   z-index: 9;
 }
