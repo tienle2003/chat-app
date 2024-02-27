@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./user-chat.css";
 
 const UserChats = () => {
@@ -9,10 +9,45 @@ const UserChats = () => {
 
     // Style for dropdown menu
     const dropdownStyle = {
-        position: "absolute",
-        inset: "0px auto auto 0px",
-        transform: "translate(0px, 40px)"
+        position: 'absolute',
+        inset: '0px auto auto 0px',
+        transform: `translate(0px, 40px)`,
     };
+
+    const [isFirstDropdownExpanded, setFirstDropdownExpanded] = useState(false);
+    const [isSecondDropdownExpanded, setSecondDropdownExpanded] = useState(false);
+    const dropdownRef1 = useRef(null);
+    const dropdownRef2 = useRef(null);
+
+    const handleFirstDropdownClick = () => {
+        setFirstDropdownExpanded(!isFirstDropdownExpanded);
+        setSecondDropdownExpanded(false);
+    };
+
+    const handleSecondDropdownClick = () => {
+        setSecondDropdownExpanded(!isSecondDropdownExpanded);
+        setFirstDropdownExpanded(false);
+    };
+
+    const handleDocumentClick = (event) => {
+        if ((dropdownRef1.current && !dropdownRef1.current.contains(event.target))
+            && (dropdownRef2.current && !dropdownRef2.current.contains(event.target))) {
+            setFirstDropdownExpanded(false);
+            setSecondDropdownExpanded(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('click', handleDocumentClick);
+
+        return () => {
+            document.removeEventListener('click', handleDocumentClick);
+        };
+    }, []);
+
+    const firstAriaHidden = isFirstDropdownExpanded ? 'false' : 'true';
+    const secondAriaHidden = isSecondDropdownExpanded ? 'false' : 'true';
+
 
     return (
         <div className="user-chat w-100 overflow-hidden user-chat-show">
@@ -41,12 +76,12 @@ const UserChats = () => {
                             </div>
                             <div className="col-4 col-sm-8">
                                 <ul className="list-inline user-chat-nav text-end mb-0">
-                                    <li className="list-inline-item">
-                                        <div className="dropdown show">
-                                            <button type="button" className="btn nav-btn btn btn-none">
+                                    <li className="list-inline-item" onClick={handleFirstDropdownClick}>
+                                        <div className={`dropdown ${isFirstDropdownExpanded ? 'show' : ''}`} ref={dropdownRef1}>
+                                            <button type="button" className="btn nav-btn btn btn-none" aria-haspopup="true" aria-expanded={isFirstDropdownExpanded} onClick={handleFirstDropdownClick}>
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                             </button>
-                                            <div role="menu" className="p-0 dropdown-menu-end dropdown-menu-md dropdown-menu show" style={dropdownStyle}>
+                                            <div tabIndex={-1} role="menu" className={`p-0 dropdown-menu-end dropdown-menu-md dropdown-menu ${isFirstDropdownExpanded ? 'show' : ''}`} aria-hidden={firstAriaHidden} style={isFirstDropdownExpanded ? dropdownStyle : null}>
                                                 <div className="search-box p-2">
                                                     <input placeholder="Search..." type="text" className="form-control bg-light border-0 form-control"></input>
                                                 </div>
@@ -68,12 +103,12 @@ const UserChats = () => {
                                             <i class="fa-regular fa-user"></i>
                                         </button>
                                     </li>
-                                    <li className="list-inline-item">
-                                        <div className="dropdown show">
-                                            <button type="button" className="btn nav-btn btn btn-none">
+                                    <li className="list-inline-item" onClick={handleSecondDropdownClick}>
+                                        <div className={`dropdown ${isSecondDropdownExpanded ? 'show' : ''}`} ref={dropdownRef2}>
+                                            <button type="button" className="btn nav-btn btn btn-none" aria-haspopup="true" aria-expanded={isSecondDropdownExpanded} onClick={handleSecondDropdownClick}>
                                                 <i class="fa-solid fa-ellipsis"></i>
                                             </button>
-                                            <div role="menu" className="dropdown-menu-end dropdown-menu show" style={dropdownStyle}>
+                                            <div tabIndex={-1} role="menu" className={`dropdown-menu-end dropdown-menu ${isSecondDropdownExpanded ? 'show' : ''}`} aria-hidden={secondAriaHidden} style={isSecondDropdownExpanded ? dropdownStyle : null}>
                                                 <button type="button" role="menuitem" className="d-block d-lg-none user-profile-show dropdown-item">
                                                     View profile
                                                     <i class=" ic-dropdown-item float-end fa-regular fa-user"></i>
