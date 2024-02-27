@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Sidebar from "../components/sidebar";
 import Content from "../components/content";
 import UserChats from "../components/user-chat";
