@@ -9,6 +9,235 @@
     transition: all .4s;
 }
 
+.me-3 {
+    margin-right: 1rem !important;
+}
+
+.ms-0 {
+    margin-left: 0 !important;
+}
+
+.avatar-xs {
+    height: 2.2rem;
+    width: 2.2rem;
+}
+
+.font-size-16 {
+    font-size: 16px !important;
+}
+
+.text-reset {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.ic-active-status {
+    display: inline-block !important;
+    margin-left: 0.5rem !important;
+    color: rgba(6, 214, 160, 1) !important;
+    font-size: 10px !important;
+}
+
+.col-4 {
+    flex: 0 0 auto;
+    width: 33.33333%;
+}
+
+.list-inline,
+.list-unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+
+.text-end {
+    text-align: right !important;
+}
+
+.dropdown {
+    cursor: pointer;
+}
+
+.nav-btn {
+    background-color: transparent;
+}
+
+.user-chat-nav .nav-btn {
+    box-shadow: none;
+    color: #7a7f9a;
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    width: 40px;
+}
+
+.dropdown-menu {
+    animation-duration: .3s;
+    animation-name: DropDownSlide;
+    animation-fill-mode: both;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(15, 34, 58, .12);
+    margin: 0;
+    border: 1px solid #f0eff5;
+    z-index: 1000;
+}
+
+@keyframes DropDownSlide {
+    100% {
+        transform: translateY(0);
+    }
+
+    0% {
+        transform: translateY(10px);
+    }
+}
+
+.dropdown-menu.show {
+    top: 100% !important;
+}
+
+.dropdown-menu-end {
+    left: auto !important;
+    right: 0 !important;
+}
+
+.border-0 {
+    border-width: 0 !important;
+}
+
+.dropdown-menu .search-box .bg-light {
+    background-color: rgba(230, 235, 245, 1) !important;
+}
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+.ic-dropdown-item {
+    color: #7a7f9a !important;
+}
+
+.chat-input-section {
+    background-color: #fff;
+}
+
+.g-0,
+.gx-0 {
+    --bs-gutter-x: 0;
+}
+
+.g-0,
+.gy-0 {
+    --bs-gutter-y: 0;
+}
+
+.chat-input-section .col {
+    flex: 1 0;
+}
+
+.chat-input-section .col-auto {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.chat-input-section .col .bg-light {
+    background-color: rgba(230, 235, 245, 1) !important;
+}
+
+.chat-input-section .col .form-control-lg {
+    min-height: calc(1.5rem + 1rem + 6px);
+    font-size: .875rem;
+}
+
+.chat-input-links .list-inline-item:not(:last-child) {
+    margin: 0;
+}
+
+.btn-group {
+    border-radius: 0.25rem;
+}
+
+.btn-group>.btn {
+    flex: 1 1 auto;
+    position: relative;
+}
+
+.btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
+.btn {
+    border-color: transparent !important;
+}
+
+.input-file .waves-effect {
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer !important;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+}
+
+.input-file label {
+    margin-bottom: 0;
+}
+
+.form-control[type=file] {
+    overflow: hidden;
+}
+
+.input-file input[type=file] {
+    display: none;
+}
+
+.form-control[type=file]:not(:disabled):not([readonly]) {
+    cursor: pointer;
+}
+
+.ic-chat-tool {
+    color: #7269ef;
+}
+
+.ic-chat-tool.ic-send {
+    color: #fff;
+}
+
+.list-inline-item .btn-primary {
+    background-color: #7269ef;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -17,4 +246,28 @@
 
 .user-profile-sidebar {
     display: none;
+}
+
+@media (min-width: 576px) {
+    .col-sm-4 {
+        flex: 0 0 auto !important;
+        max-width: 33.333333% !important;
+    }
+
+    .col-sm-8 {
+        flex: 0 0 auto;
+        width: 66.66667% !important;
+    }
+}
+
+@media (min-width: 600px) {
+    .dropdown-menu-md {
+        width: 240px;
+    }
+}
+
+@media (min-width: 768px) {
+    .ms-md-2 {
+        margin-left: 0.5rem !important;
+    }
 }
