@@ -1,12 +1,9 @@
 import React from "react";
-import Chat from "../chat";
+import "../css/pages-common.css";
 
 const ChatGPT = () => {
     return (
-        // <Chat>
-        //      <h2>ChatGPT Page</h2>
-        // </Chat>
-        <h2>ChatGPT Page</h2>
+        <div id="pills-chat-gpt" className="tab-pane ">ChatGPT Page</div>
     );
 };
 export default ChatGPT;
