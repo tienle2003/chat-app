@@ -7,6 +7,49 @@ const UserChats = () => {
         maxHeight: "100%"
     };
 
+    const visibleStyle = {
+        visibility: "visible"
+    };
+
+    const hiddenStyle = {
+        visibility: "hidden"
+    };
+
+    const simplebarwrapperMargin = {
+        margin: "-24px"
+    };
+
+    const simplebarOffset = {
+        right: "0px",
+        bottom: "0px"
+    };
+
+    const simpleContentWrapper = {
+        height: "10%",
+        overflow: "hidden scroll"
+    };
+
+    const paddingStyle = {
+        padding: "24px"
+    };
+
+    const simplebarScrollbar = {
+        width: "0px",
+        display: "none"
+    };
+
+    const simplebarScrollVisible = {
+        height: "",
+        transform: "translate3d(0px, 0px, 0px)",
+        display: "block"
+    };
+
+    const simplebarContentWrapper = {
+        height: "100%",
+        overflow: "hidden"
+    };
+
+
     // Style for dropdown menu
     const dropdownStyle = {
         position: 'absolute',
@@ -37,6 +80,10 @@ const UserChats = () => {
         }
     };
 
+    const handleInputClick = (event) => {
+        event.stopPropagation();
+    };
+
     useEffect(() => {
         document.addEventListener('click', handleDocumentClick);
 
@@ -47,6 +94,17 @@ const UserChats = () => {
 
     const firstAriaHidden = isFirstDropdownExpanded ? 'false' : 'true';
     const secondAriaHidden = isSecondDropdownExpanded ? 'false' : 'true';
+
+
+    const [isShowProfile, setShowProfile] = useState(false);
+    // Event show profile processing
+    const handleShowProfile = () => {
+        setShowProfile(!isShowProfile);
+    };
+
+    const handleCloseShowProfile = () => {
+        setShowProfile(false);
+    }
 
 
     return (
@@ -64,7 +122,7 @@ const UserChats = () => {
                                         </a>
                                     </div>
                                     <div className="me-3 ms-0">
-                                        <img src="" alt="chatvia" className="rounded-circle avatar-xs"></img>
+                                        <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-1/386494695_1040220287160554_1657037466046002038_n.jpg?stp=dst-jpg_p200x200&_nc_cat=109&ccb=1-7&_nc_sid=5740b7&_nc_ohc=N8HV_uxU4EEAX_mMmy0&_nc_ht=scontent.fhan14-4.fna&oh=00_AfDg3RpJlc-5K57MZeTH93oHGxcpi7kviZTKeAvzxY6Dfg&oe=65E402EA" alt="chatvia" className="rounded-circle avatar-xs"></img>
                                     </div>
                                     <div className="flex-grow-1 overflow-hidden">
                                         <h5 className="font-size-16 mb-0 text-truncate">
@@ -81,9 +139,9 @@ const UserChats = () => {
                                             <button type="button" className="btn nav-btn btn btn-none" aria-haspopup="true" aria-expanded={isFirstDropdownExpanded} onClick={handleFirstDropdownClick}>
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                             </button>
-                                            <div tabIndex={-1} role="menu" className={`p-0 dropdown-menu-end dropdown-menu-md dropdown-menu ${isFirstDropdownExpanded ? 'show' : ''}`} aria-hidden={firstAriaHidden} style={isFirstDropdownExpanded ? dropdownStyle : null}>
+                                            <div tabIndex={-1} role="menu" className={`p-0 dropdown-menu-end dropdown-menu-md dropdown-menu ${isFirstDropdownExpanded ? 'show' : ''}`} aria-hidden={firstAriaHidden} style={isFirstDropdownExpanded ? dropdownStyle : null} onClick={handleInputClick}>
                                                 <div className="search-box p-2">
-                                                    <input placeholder="Search..." type="text" className="form-control bg-light border-0 form-control"></input>
+                                                    <input placeholder="Search..." type="text" className="form-control bg-light border-0 form-control" onClick={handleInputClick}></input>
                                                 </div>
                                             </div>
                                         </div>
@@ -98,7 +156,7 @@ const UserChats = () => {
                                             <i class="fa-solid fa-video"></i>
                                         </button>
                                     </li>
-                                    <li className="list-inline-item d-none d-lg-inline-block me-2 ms-0">
+                                    <li className="list-inline-item d-none d-lg-inline-block me-2 ms-0" onClick={handleShowProfile}>
                                         <button type="button" className="btn nav-btn">
                                             <i class="fa-regular fa-user"></i>
                                         </button>
@@ -134,8 +192,30 @@ const UserChats = () => {
                     </div>
 
                     {/* Area to show realtime chat message between users with time and status for every message */}
-                    <div className="chat-conversation p-5 p-lg-4 simplebar-scrollable-y" id="messages" style={mainChatStyle}>
+                    <div data-simplebar="init" className="chat-conversation p-5 p-lg-4 simplebar-scrollable-y" id="messages" style={mainChatStyle}>
+                        <div className="simplebar-wrapper" style={simplebarwrapperMargin}>
+                            <div className="simplebar-height-auto-observer-wrapper">
+                                <div className="simplebar-height-auto-observer"></div>
+                            </div>
+                            <div className="simplebar-mask">
+                                <div className="simplebar-offset" style={simplebarOffset}>
+                                    <div className="simplebar-content-wrapper" tabIndex={0} role="region" aria-label="scrollable content" style={simpleContentWrapper}>
+                                        <div className="simplebar-content" style={paddingStyle}>
+                                            <ul className="list-unstyled mb-0">
 
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="simplebar-placeholder" ></div>
+                        </div>
+                        <div className="simplebar-track simple-horizontal" style={visibleStyle}>
+                            <div className="simplebar-scrollbar" style={simplebarScrollbar}></div>
+                        </div>
+                        <div className="simplebar-track simple-vertical" style={hiddenStyle}>
+                            <div className="simplebar-scrollbar simplebar-visible" style={simplebarScrollVisible}></div>
+                        </div>
                     </div>
 
                     {/* Area to enter chat massage and inract with emojis, images, attached files and send messages */}
@@ -185,45 +265,48 @@ const UserChats = () => {
                         </form>
                     </div>
                 </div>
-                <div className="user-profile-sidebar" >
+
+                {/* Show profile on the right side */}
+                <div className="user-profile-sidebar" style={{ display: isShowProfile ? 'block' : 'none' }}>
                     <div className="px-3 px-lg-4 pt-3 pt-lg-4">
                         <div className="user-chat-nav text-end">
-                            <button type="button" id="user-profile-hide" className="nav-btn btn btn-none">
+                            <button type="button" id="user-profile-hide" className="nav-btn btn btn-none" onClick={handleCloseShowProfile}>
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
                         </div>
                     </div>
                     <div className="text-center p-4 border-bottom">
                         <div className="mb-4 d-flex justify-content-center">
-                            <img src="" alt="chatvia" className="rounded-circleavatar-lg img-thumbnail"></img>
+                            <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-1/386494695_1040220287160554_1657037466046002038_n.jpg?stp=dst-jpg_p200x200&_nc_cat=109&ccb=1-7&_nc_sid=5740b7&_nc_ohc=N8HV_uxU4EEAX_mMmy0&_nc_ht=scontent.fhan14-4.fna&oh=00_AfDg3RpJlc-5K57MZeTH93oHGxcpi7kviZTKeAvzxY6Dfg&oe=65E402EA" alt="chatvia" className="rounded-circle avatar-lg img-thumbnail"></img>
                         </div>
                         <h5 className="font-size-16 mb-1 text-truncate">Lê Đức Anh</h5>
                         <p className="text-muted text-truncate mb-1">
-                            <i class="fa-solid fa-circle-dot"></i>
+                            <i class="font-size-10 text-success me-1 fa-solid fa-circle-dot"></i>
                             Active
                         </p>
                     </div>
-                    <div className="p-4 user-profile-desc simplebar-scrollable-y" >
-                        <div className="simplebar-wrapper" >
+                    <div className="p-4 user-profile-desc simplebar-scrollable-y" data-simplebar="init" style={mainChatStyle}>
+                        <div className="simplebar-wrapper" style={simplebarwrapperMargin}>
                             <div className="simplebar-height-auto-observer-wrapper">
                                 <div className="simplebar-height-auto-observer"></div>
                             </div>
                             <div className="simplebar-mask">
-                                <div className="simplebar-offset" >
-                                    <div className="simplebar-content-wrapper" >
-                                        <div className="simplebar-content" >
+                                <div className="simplebar-offset" style={simplebarOffset}>
+                                    <div className="simplebar-content-wrapper" tabIndex={0} aria-label="scrollable content" style={simplebarContentWrapper}>
+                                        <div className="simplebar-content" style={paddingStyle}>
                                             <div className="text-muted">
                                                 <p className="mb-4">
                                                     If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual.
                                                 </p>
                                             </div>
-                                            <div className="profile-user-accordion">
+                                            <div id="profile-user-accordion" className="custom-accordion">
                                                 <div className="shadow-none border mb-2 card">
-                                                    <a className="text-dark" href="#">
+                                                    <a className="text-dark text-decoration-none" href="#">
                                                         <div id="profile-user-headingOne" className="card-header">
                                                             <h5 className="font-size-14 m-0">
-                                                                <i class="fa-regular fa-user"></i> About
-                                                                <span className="span-float-right">
+                                                                <i class="align-middle d-inline-block me-2 fa-regular fa-user"></i>
+                                                                About
+                                                                <span className="span-float-right float-end font-size-16">
                                                                     <i class="fa-solid fa-caret-up"></i>
                                                                     {/* <i class="fa-solid fa-caret-down"></i> */}
                                                                 </span>
@@ -252,12 +335,12 @@ const UserChats = () => {
                                                     </div>
                                                 </div>
                                                 <div className="mb-1 shadow-none border card">
-                                                    <a className="text-dark" href="#">
+                                                    <a className="text-dark text-decoration-none" href="#">
                                                         <div id="profile-user-headingOne" className="card-header">
                                                             <h5 className="font-size-14 m-0">
-                                                                <i class="fa-solid fa-paperclip"></i>
+                                                                <i class="align-middle me-2 d-inline-block fa-solid fa-paperclip"></i>
                                                                 Attached Files
-                                                                <span className="span-float-right">
+                                                                <span className="span-float-right float-end font-size-16">
                                                                     <i class="fa-solid fa-caret-up"></i>
                                                                     {/* <i class="fa-solid fa-caret-down"></i> */}
                                                                 </span>
@@ -328,10 +411,10 @@ const UserChats = () => {
                             </div>
                             <div className="simplebar-placeholder" ></div>
                         </div>
-                        <div className="simplebar-track simplebar-horizontal" >
+                        <div className="simplebar-track simplebar-horizontal" style={hiddenStyle}>
                             <div className="simplebar-scrollbar" ></div>
                         </div>
-                        <div className="simplebar-track simplebar-vertical" >
+                        <div className="simplebar-track simplebar-vertical" style={visibleStyle}>
                             <div className="simplebar-scrollbar" >
 
                             </div>
