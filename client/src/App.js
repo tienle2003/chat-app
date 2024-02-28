@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 
 import "./App.css";
@@ -6,16 +6,8 @@ import Chat from "./pages/chat";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import ResetPassword from "./pages/forget-password";
-import Sidebar from "./components/sidebar";
-import Content from "./components/content";
-import Chats from "./pages/components/chats";
-import Profile from "./pages/components/profile";
-import Groups from "./pages/components/groups";
-import Settings from "./pages/components/settings";
-import ChatGPT from "./pages/components/chatGPT";
 
 function App() {
-  const [selectedContent, setSelectedContent] = useState("");
   return (
     <>
       <BrowserRouter>
@@ -23,6 +15,7 @@ function App() {
           <Route path="/" element={<Chat />}></Route>
           <Route path="/chats" element={<Chat />}></Route>
           <Route path="/group" element={<Chat />}></Route>
+          <Route path="/contacts" element={<Chat />}></Route>
           <Route path="/chat-gpt" element={<Chat />}></Route>
           <Route path="/profile" element={<Chat />}></Route>
           <Route path="/setting" element={<Chat />}></Route>
