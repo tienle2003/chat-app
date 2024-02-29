@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css"; // optional
+import "tippy.js/dist/tippy.css";
 import { NavLink } from "react-router-dom";
 import "./sidebar.css";
 import {
@@ -18,30 +18,37 @@ import {
   Robot,
 } from "react-bootstrap-icons";
 
-function Sidebar() {
+function Sidebar({ handleTabChange }) {
   const dropStyle = {
     position: "absolute",
     inset: "auto auto 0px 0px",
     transform: "translate(0px,-64px)"
   };
 
-  const [isMenuVisible, setMenuVisible] = useState(false);
-  const [mode, setMode] = useState(false);
+  const [isMenuVisible, setMenuVisible] = useState(false);  // variable for visible submenu status
+  const [mode, setMode] = useState(false);  // variable for dark/light mode status
+  const [activeLink, setActiveLink] = useState(1);  // variable to set 'is-active' default for 'Chats' icon
 
+  // function for change dark/light mode
   const handleToggleMode = () => {
     setMode(!mode);
   };
 
+  // function for show/hidden submenu
   const handleToggleMenu = () => {
     setMenuVisible(!isMenuVisible);
   };
 
+  // ham xu ly khi click vao nhung vi tri ngoai submenu
   const dropdownRef = useRef(null);
   const handleDocumentClick = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setMenuVisible(false);
+      setMenuVisible(false);  // thi se an menu
     }
   };
+
+  // su dung 'useEffect' de khi click vao bat ky vi tri nao ngoai submenu
+  // de an submenu dang hien thi
   useEffect(() => {
     document.addEventListener('click', handleDocumentClick);
 
@@ -50,18 +57,20 @@ function Sidebar() {
     };
   }, []);
 
+  // du lieu cho cac phan tu 'NavLink'
   const menuItems = [
-    { content: "Profile", subcontent: "user", icon: <Person />, href: "/profile" },
-    { content: "Chats", subcontent: "chat", icon: <Chat />, href: "/chats" },
-    { content: "Groups", subcontent: "group", icon: <People />, href: "/group" },
-    { content: "Contacts", subcontent: "contact", icon: <PersonLinesFill />, href: "/contacts" },
-    { content: "Settings", subcontent: "setting", icon: <Gear />, href: "/setting" },
-    { content: "Chat GPT", subcontent: "chatgpt", icon: <Robot />, href: "/chat-gpt", offset: [0, 0] },
+    { content: "Profile", subcontent: "pills-users", icon: <Person />, href: "/profile" },
+    { content: "Chats", subcontent: "pills-chats", icon: <Chat />, href: "/chats" },
+    { content: "Groups", subcontent: "pills-groups", icon: <People />, href: "/group" },
+    { content: "Contacts", subcontent: "pills-contacts", icon: <PersonLinesFill />, href: "/contacts" },
+    { content: "Settings", subcontent: "pills-settings", icon: <Gear />, href: "/setting" },
+    { content: "Chat GPT", subcontent: "pills-chatgpt", icon: <Robot />, href: "/chat-gpt", offset: [0, 0] },
   ];
 
   return (
     <>
       <div className="side_menu d-flex flex-column mg-lg-1 text-center ">
+        {/* Logo Chatvia */}
         <a className="logo" href="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -76,22 +85,23 @@ function Sidebar() {
             />
           </svg>
         </a>
+
+        {/* Menu: Profile, Chat, Group, Contact, Setting, Chat GPT */}
         <div className="flex-column mt-auto mb-auto">
-          <ul className="d-flex flex-wrap justify-content-center nav-list">
+          <ul className="side-menu-nav d-flex flex-wrap justify-content-center nav-list">
             {menuItems.map((item, index) => (
-              <li className="nav-item nav-item-symbols" id={item.content}>
+              <li className="nav-item nav-item-symbols" id={item.content} key={index}>
                 <Tippy
-                  key={index}
                   offset={[0, -4]}
                   delay={[300, 0]}
                   content={item.content}
                 >
-                  <NavLink id={`pills-${item.subcontent}-tab`}
-                    className={(nav) =>
-                      `mb-2 nav-link ${nav.isActive ? "is-active" : ""}`
-                    }
-                    to={item.href} key={index}
-
+                  <NavLink
+                    id={`${item.subcontent}-tab`}
+                    className={`mb-2 nav-link ${index === activeLink ? "is-active" : ""}`}
+                    // to={item.href}
+                    key={index}
+                    onClick={() => { handleTabChange(index); setActiveLink(index); }}
                   >
                     {item.icon}
                   </NavLink>
@@ -100,6 +110,8 @@ function Sidebar() {
             ))}
           </ul>
         </div>
+
+        {/* Menu: Chon ngon ngu, Dark/Light mode, Profile tools */}
         <div className="flex-lg-column d-none d-lg-block">
           <ul className="d-flex flex-wrap justify-content-center nav-list">
             <li className="nav-item btn-group dropup profile-user-dropdown dropdown">

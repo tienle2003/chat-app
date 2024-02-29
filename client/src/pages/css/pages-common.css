@@ -1,0 +1,141 @@
+.tab-content>.active {
+    display: block;
+}
+
+.text-success {
+    --bs-success-rgb: 6, 214, 160;
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important;
+}
+
+.dropdown-toogle {
+    white-space: nowrap;
+}
+
+.dropdown-item {
+    outline: none !important;
+}
+
+.font-size-13 {
+    font-size: 13px !important;
+}
+
+.font-size-18 {
+    font-size: 18px !important;
+}
+
+.collapse .text-muted {
+    background-color: transparent !important;
+}
+
+.pe-1 {
+    padding-right: 0.25rem !important;
+}
+
+.ps-3 {
+    padding-left: 1rem !important;
+}
+
+.chat-search-box .input-group .bg-light {
+    background-color: rgba(230, 235, 245, 1) !important;
+}
+
+.chat-search-box .input-group input {
+    border: none;
+}
+
+.alice-carousel {
+    direction: ltr;
+    margin: auto;
+    position: relative;
+    width: 100%;
+}
+
+.alice-carousel__wrapper {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.alice-carousel__stage,
+.alice-carousel__wrapper {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+}
+
+.alice-carousel__stage {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    transform-style: flat;
+    -webkit-transform-style: flat;
+    white-space: nowrap;
+}
+
+.alice-carousel__stage-item {
+    margin-right: 16px !important;
+    width: 71px !important;
+}
+
+.alice-carousel__stage-item {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 100%;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    vertical-align: top;
+    white-space: normal;
+    width: 100%;
+}
+
+.alice-carousel__stage-item * {
+    line-height: normal;
+}
+
+.user-status-box {
+    --bs-light: #e6ebf5;
+    background-color: var(--bs-light);
+    border-radius: 8px;
+    display: block;
+    margin-top: 16px;
+    padding: 8px;
+    text-align: center;
+    color: #343a40;
+}
+
+.chat-user-img {
+    position: relative;
+}
+
+.chat-leftsidebar .user-status-box .chat-user-img {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.chat-user-img .user-status {
+    background-color: #adb5bd;
+    border: 2px solid #fff;
+    border: 2px solid var(--bs-white);
+    border-radius: 50%;
+    bottom: 0;
+    height: 10px;
+    left: auto;
+    position: absolute;
+    right: 0;
+    width: 10px;
+}
+
+.chat-user-img.online .user-status {
+    background-color: #06d6a0;
+}
+
+.user-status-box:hover {
+    color: #343a40;
+}

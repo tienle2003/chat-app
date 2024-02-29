@@ -173,8 +173,13 @@ button:not(:disabled) {
 
 .dropdown-item:active {
     background-color: transparent !important;
-    color: #7a7f9a !important;
+    color: #717171 !important;
     outline: none;
+}
+
+.list-inline-item .chat-send:active {
+    background-color: #7269ef !important;
+    opacity: 0.9;
 }
 
 .text-decoration-none {
@@ -191,7 +196,6 @@ button:not(:disabled) {
     display: inline-block;
     overflow: hidden;
     position: relative;
-    user-select: none;
 }
 
 .input-file label {
