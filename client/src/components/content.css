@@ -14,3 +14,7 @@
     background-color: #f5f7fb;
     height: 100vh;
 }
+
+.tab-content>.active {
+    display: block;
+}
