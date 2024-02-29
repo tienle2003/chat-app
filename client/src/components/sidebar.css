@@ -53,7 +53,7 @@
   color: var(--purple-weight-light);
 }
 
-.is-active {
+.side-menu-nav .nav-item .nav-link.is-active {
   color: var(--purple-weight-light) !important;
   background-color: #ededfa;
 }
