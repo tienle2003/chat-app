@@ -87,20 +87,21 @@ const Chats = () => {
             <div>
                 <h5 className="mb-3 px-3 font-size-16">Recent</h5>
                 <div data-simplebar="init" className="chat-message-list simplebar-scrollable-y">
-                    <div className="simplebar-wrapper" >
+                    <div className="simplebar-wrapper" style={{ margin: '0px' }}>
                         <div className="simplebar-height-auto-observer-wrapper">
                             <div className="simplebar-height-auto-observer"></div>
                         </div>
                         <div className="simplebar-mask">
                             <div className="simplebar-offset" >
-                                <div className="simplebar-content-wrapper" tabIndex={0} role="region" aria-label="scrollable content" >
-                                    <div className="simplebar-content" >
-                                        <ul className="list-unstyled chat-list chat-user-list px-2">
-                                            <li id="conversation0" className="">
+                                <div className="simplebar-content-wrapper" tabIndex={0} role="region" aria-label="scrollable content" style={{ height: '100%', overflow: "hidden scroll" }}>
+                                    <div className="simplebar-content" style={{ padding: "0px" }}>
+                                        <ul className="list-unstyled chat-list chat-user-list px-2" id="chat-list">
+                                            <li id="conversation0" className="active">
                                                 <a href="#">
                                                     <div className="d-flex">
                                                         <div className="chat-user-img online align-self-center ms-0">
                                                             <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-1/121715738_353421755994447_2417794065107370349_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=bXaRhYwUDLsAX8MqKTC&_nc_ht=scontent.fhan14-4.fna&oh=00_AfBpzbFsFUvCZEOcMXFLTgiGSUfqDh0oJblYDgoebsjGOg&oe=66064582" alt="chatvia" className="rounded-circle avatar-xs"></img>
+                                                            <span className="user-status"></span>
                                                         </div>
                                                         <div className="flex-grow-1 overflow-hidden">
                                                             <h5 className="text-truncate font-size-15 mb-1 ms-3">Lê Mạnh</h5>
@@ -115,6 +116,7 @@ const Chats = () => {
                                                     <div className="d-flex">
                                                         <div className="chat-user-img online align-self-center ms-0">
                                                             <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-1/121715738_353421755994447_2417794065107370349_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=bXaRhYwUDLsAX8MqKTC&_nc_ht=scontent.fhan14-4.fna&oh=00_AfBpzbFsFUvCZEOcMXFLTgiGSUfqDh0oJblYDgoebsjGOg&oe=66064582" alt="chatvia" className="rounded-circle avatar-xs"></img>
+                                                            <span className="user-status"></span>
                                                         </div>
                                                         <div className="flex-grow-1 overflow-hidden">
                                                             <h5 className="text-truncate font-size-15 mb-1 ms-3">Lê Mạnh</h5>
@@ -129,6 +131,7 @@ const Chats = () => {
                                                     <div className="d-flex">
                                                         <div className="chat-user-img online align-self-center ms-0">
                                                             <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-1/121715738_353421755994447_2417794065107370349_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=bXaRhYwUDLsAX8MqKTC&_nc_ht=scontent.fhan14-4.fna&oh=00_AfBpzbFsFUvCZEOcMXFLTgiGSUfqDh0oJblYDgoebsjGOg&oe=66064582" alt="chatvia" className="rounded-circle avatar-xs"></img>
+                                                            <span className="user-status"></span>
                                                         </div>
                                                         <div className="flex-grow-1 overflow-hidden">
                                                             <h5 className="text-truncate font-size-15 mb-1 ms-3">Lê Mạnh</h5>
@@ -143,6 +146,7 @@ const Chats = () => {
                                                     <div className="d-flex">
                                                         <div className="chat-user-img online align-self-center ms-0">
                                                             <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-1/121715738_353421755994447_2417794065107370349_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=bXaRhYwUDLsAX8MqKTC&_nc_ht=scontent.fhan14-4.fna&oh=00_AfBpzbFsFUvCZEOcMXFLTgiGSUfqDh0oJblYDgoebsjGOg&oe=66064582" alt="chatvia" className="rounded-circle avatar-xs"></img>
+                                                            <span className="user-status"></span>
                                                         </div>
                                                         <div className="flex-grow-1 overflow-hidden">
                                                             <h5 className="text-truncate font-size-15 mb-1 ms-3">Lê Mạnh</h5>
@@ -157,6 +161,7 @@ const Chats = () => {
                                                     <div className="d-flex">
                                                         <div className="chat-user-img online align-self-center ms-0">
                                                             <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-1/121715738_353421755994447_2417794065107370349_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=bXaRhYwUDLsAX8MqKTC&_nc_ht=scontent.fhan14-4.fna&oh=00_AfBpzbFsFUvCZEOcMXFLTgiGSUfqDh0oJblYDgoebsjGOg&oe=66064582" alt="chatvia" className="rounded-circle avatar-xs"></img>
+                                                            <span className="user-status"></span>
                                                         </div>
                                                         <div className="flex-grow-1 overflow-hidden">
                                                             <h5 className="text-truncate font-size-15 mb-1 ms-3">Lê Mạnh</h5>
@@ -171,6 +176,7 @@ const Chats = () => {
                                                     <div className="d-flex">
                                                         <div className="chat-user-img online align-self-center ms-0">
                                                             <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-1/121715738_353421755994447_2417794065107370349_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=bXaRhYwUDLsAX8MqKTC&_nc_ht=scontent.fhan14-4.fna&oh=00_AfBpzbFsFUvCZEOcMXFLTgiGSUfqDh0oJblYDgoebsjGOg&oe=66064582" alt="chatvia" className="rounded-circle avatar-xs"></img>
+                                                            <span className="user-status"></span>
                                                         </div>
                                                         <div className="flex-grow-1 overflow-hidden">
                                                             <h5 className="text-truncate font-size-15 mb-1 ms-3">Lê Mạnh</h5>
@@ -185,6 +191,7 @@ const Chats = () => {
                                                     <div className="d-flex">
                                                         <div className="chat-user-img online align-self-center ms-0">
                                                             <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-1/121715738_353421755994447_2417794065107370349_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=bXaRhYwUDLsAX8MqKTC&_nc_ht=scontent.fhan14-4.fna&oh=00_AfBpzbFsFUvCZEOcMXFLTgiGSUfqDh0oJblYDgoebsjGOg&oe=66064582" alt="chatvia" className="rounded-circle avatar-xs"></img>
+                                                            <span className="user-status"></span>
                                                         </div>
                                                         <div className="flex-grow-1 overflow-hidden">
                                                             <h5 className="text-truncate font-size-15 mb-1 ms-3">Lê Mạnh</h5>
@@ -199,6 +206,7 @@ const Chats = () => {
                                                     <div className="d-flex">
                                                         <div className="chat-user-img online align-self-center ms-0">
                                                             <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-1/121715738_353421755994447_2417794065107370349_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=bXaRhYwUDLsAX8MqKTC&_nc_ht=scontent.fhan14-4.fna&oh=00_AfBpzbFsFUvCZEOcMXFLTgiGSUfqDh0oJblYDgoebsjGOg&oe=66064582" alt="chatvia" className="rounded-circle avatar-xs"></img>
+                                                            <span className="user-status"></span>
                                                         </div>
                                                         <div className="flex-grow-1 overflow-hidden">
                                                             <h5 className="text-truncate font-size-15 mb-1 ms-3">Lê Mạnh</h5>
@@ -213,6 +221,7 @@ const Chats = () => {
                                                     <div className="d-flex">
                                                         <div className="chat-user-img online align-self-center ms-0">
                                                             <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-1/121715738_353421755994447_2417794065107370349_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=bXaRhYwUDLsAX8MqKTC&_nc_ht=scontent.fhan14-4.fna&oh=00_AfBpzbFsFUvCZEOcMXFLTgiGSUfqDh0oJblYDgoebsjGOg&oe=66064582" alt="chatvia" className="rounded-circle avatar-xs"></img>
+                                                            <span className="user-status"></span>
                                                         </div>
                                                         <div className="flex-grow-1 overflow-hidden">
                                                             <h5 className="text-truncate font-size-15 mb-1 ms-3">Lê Mạnh</h5>
@@ -227,6 +236,7 @@ const Chats = () => {
                                                     <div className="d-flex">
                                                         <div className="chat-user-img online align-self-center ms-0">
                                                             <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-1/121715738_353421755994447_2417794065107370349_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=bXaRhYwUDLsAX8MqKTC&_nc_ht=scontent.fhan14-4.fna&oh=00_AfBpzbFsFUvCZEOcMXFLTgiGSUfqDh0oJblYDgoebsjGOg&oe=66064582" alt="chatvia" className="rounded-circle avatar-xs"></img>
+                                                            <span className="user-status"></span>
                                                         </div>
                                                         <div className="flex-grow-1 overflow-hidden">
                                                             <h5 className="text-truncate font-size-15 mb-1 ms-3">Lê Mạnh</h5>
@@ -243,11 +253,11 @@ const Chats = () => {
                         </div>
                         <div className="simplebar-placeholder" ></div>
                     </div>
-                    <div className="simplebar-track simplebar-horizontal" >
-                        <div className="simplebar-scrollbar" ></div>
+                    <div className="simplebar-track simplebar-horizontal" style={{ visibility: "hidden" }}>
+                        <div className="simplebar-scrollbar" style={{ width: '0px', display: "none" }}></div>
                     </div>
-                    <div className="simplebar-track simplebar-vertical" >
-                        <div className="simplebar-scrollbar" ></div>
+                    <div className="simplebar-track simplebar-vertical" style={{ visibility: "visible" }}>
+                        <div className="simplebar-scrollbar" style={{ height: '230px', display: "block", transform: "translate3d(0px, 0px, 0px)" }}></div>
                     </div>
                 </div>
             </div>

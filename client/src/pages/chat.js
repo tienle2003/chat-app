@@ -9,7 +9,7 @@ const Chat = () => {
     display: "flex"
   };
 
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(4);  // default = 1
 
   const handleTabChange = (index) => {
     setActiveTab(index);

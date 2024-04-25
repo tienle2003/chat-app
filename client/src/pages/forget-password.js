@@ -21,9 +21,9 @@ const ResetPassword = () => {
                                     <span className="logo-text">Chatvia</span>
                                 </div>
                             </a>
-                            <h4>Lock Screen</h4>
+                            <h4>Reset Password</h4>
                             <p className="text-muted mb-4">
-                                Enter your password to unlock the screen!
+                                Reset Password With Chatvia.
                             </p>
                         </div>
                         <div className="card">
@@ -34,17 +34,17 @@ const ResetPassword = () => {
                                     </div>
                                     <form className="">
                                         <div className="mb-4 mb-3">
-                                            <label className="form-label form-label">Password</label>
+                                            <label className="form-label form-label">Email</label>
                                             <div className="input-group bg-soft-light rounded-3 mb-3 input-group">
                                                 <span className="input-group-text text-muted">
                                                     <i class="fa-regular fa-envelope"></i>
                                                 </span>
-                                                <input id="password" name="password" placeholder="Enter password" type="password" className="form-control form-control-lg bg-soft-light border-light is-invalid form-control" ></input>
-                                                <div className="invalid-feedback" type="invalid">Please Enter Your Password</div>
+                                                <input id="password" name="password" placeholder="Enter email" type="text" className="form-control form-control-lg bg-soft-light border-light is-invalid form-control" ></input>
+                                                <div className="invalid-feedback" type="invalid">Required</div>
                                             </div>
                                         </div>
                                         <div className="d-grid">
-                                            <button type="submit" className=" waves-effect waves-light btn btn-primary d-block w-100">Unlock</button>
+                                            <button type="submit" className=" waves-effect waves-light btn btn-primary d-block w-100">Reset</button>
                                         </div>
                                     </form>
                                 </div>
@@ -52,7 +52,7 @@ const ResetPassword = () => {
                         </div>
                         <div className="mt-5 text-center">
                             <p>
-                                Not you ? return
+                                Remember It ?
                                 <a className="font-weight-medium text-primary" href="/login"> Sign in</a>
                             </p>
                             <p>
